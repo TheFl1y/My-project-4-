@@ -12,7 +12,7 @@ public class ChaScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W))
         {
             anim.SetBool("Run", true);
         }
@@ -21,7 +21,7 @@ public class ChaScript : MonoBehaviour
             anim.SetBool("Run", false);
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A))
         {
             anim.SetBool("RunLeft", true);
         }
@@ -30,7 +30,7 @@ public class ChaScript : MonoBehaviour
             anim.SetBool("RunLeft", false);
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D))
         {
             anim.SetBool("RunRight", true);
         }
@@ -48,13 +48,5 @@ public class ChaScript : MonoBehaviour
             anim.SetBool("RunBack", false);
         }
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            anim.SetBool("Attack", true);
-        }
-        else
-        {
-            anim.SetBool("Attack", false);
-        }
     }
 }
