@@ -33,8 +33,12 @@ public class 傷害輸出 : MonoBehaviour
     }
     IEnumerator 特效處理(ParticleSystem 特效)
     {
-        yield return new WaitForSeconds(.5f);
+        print("1");
+        
+        yield return new WaitForSeconds(.1f);
+        
         Destroy(特效);
+        
     }
     public void 攻擊開始()
     {

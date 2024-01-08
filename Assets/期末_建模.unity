@@ -851,11 +851,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3622670526511579328, guid: 60d65e4eed2ca444d9a5224665294248, type: 3}
   m_PrefabInstance: {fileID: 515182225}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &163400860 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100112, guid: ddf397bb8ce11384bbc6d7b61581bbc6, type: 3}
-  m_PrefabInstance: {fileID: 1393096617}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &167818014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3622670526511579328, guid: 60d65e4eed2ca444d9a5224665294248, type: 3}
@@ -1690,6 +1685,11 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3622670526511579328, guid: 60d65e4eed2ca444d9a5224665294248, type: 3}
   m_PrefabInstance: {fileID: 1264726247}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &401829282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100116, guid: ddf397bb8ce11384bbc6d7b61581bbc6, type: 3}
+  m_PrefabInstance: {fileID: 1393096617}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &406552985 stripped
 Transform:
@@ -7365,8 +7365,8 @@ MonoBehaviour:
   groundFriction: 15
   airFriction: 0.5
   maxSpeed: 100
-  "\u653B\u64CA\u7279\u6548": {fileID: 4535006216103734310, guid: 98c4704d0fd7211449bcf5c451095a60, type: 3}
-  "\u7279\u6548\u4F4D\u7F6E": {fileID: 163400860}
+  "\u653B\u64CA\u7279\u6548": {fileID: 2944396702758532163, guid: e190bf97c041e58448af6b043116cba0, type: 3}
+  "\u7279\u6548\u4F4D\u7F6E": {fileID: 401829282}
   "\u653B\u64CA\u6C23\u529F\u5F48": {fileID: 8353789554248625585, guid: f792909fb71a35545aa187e3ade7d108, type: 3}
   "\u653B\u64CA\u97F3\u6548": {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
 --- !u!1001 &1442552529

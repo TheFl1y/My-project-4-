@@ -74,7 +74,8 @@ public class 移動 : MonoBehaviour
     }
     public void 特效結束()
     {
-        Destroy(播放中特效);
+        ParticleSystem ps = GetComponent<ParticleSystem>();
+        Destroy( 播放中特效, ps.main.duration ) ;
     }
     bool IsGrounded()
     {
