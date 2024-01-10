@@ -47,6 +47,11 @@ public class EnemyFollow : MonoBehaviour
                     attackTimer = attackCooldown; // Reset the cooldown
                 }
             }
+            else 
+                {
+                    if(AttackTrue == true)
+                        動畫控制器.SetBool("Attack",false);
+                }
         }
 
         // Update the attack timer
