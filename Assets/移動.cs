@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class 移動 : MonoBehaviour
 {
     public float speed = 5.0f;
@@ -23,7 +23,11 @@ public class 移動 : MonoBehaviour
     {
         動畫控制器 = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        
+        
 
 
         // Create an empty GameObject as the camera pivot
@@ -47,6 +51,8 @@ public class 移動 : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
+        
+        
         // Rotate the camera pivot for vertical movement with custom clamping
         float newRotationX = ClampVerticalRotation(cameraPivot.localEulerAngles.x - mouseY * verticalLookSpeed);
         cameraPivot.localEulerAngles = new Vector3(newRotationX, 0, 0);

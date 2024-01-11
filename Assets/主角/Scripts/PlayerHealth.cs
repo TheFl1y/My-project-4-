@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
@@ -31,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Player has died.");
+        SceneManager.LoadSceneAsync("died", LoadSceneMode.Single);
         // Implement any additional logic for player death (e.g., respawn or game over).
     }
 

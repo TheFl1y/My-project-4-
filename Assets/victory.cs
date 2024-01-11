@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class victory : MonoBehaviour
 {
-    public string Win;
+    public string Win1;
 
-    private bool hasLoaded = false; // To track if the scene has been loaded
+    public GameObject objectWithScript;
+
+    private bool hasLoaded = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,17 +22,13 @@ public class victory : MonoBehaviour
     private IEnumerator LoadAndSwitchScene()
     {
         // Load the scene in the background
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Win);
-
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Win1", LoadSceneMode.Single);
+        //SceneManager.UnloadSceneAsync("期末_建模");
         // Wait until the scene is fully loaded
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
-
-        // Set the flag to indicate that the scene has been loaded
         hasLoaded = true;
-
-        // Optionally, you can add additional logic here after the scene has been loaded
     }
 }

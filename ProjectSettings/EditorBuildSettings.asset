@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/\u671F\u672B_\u5EFA\u6A21.unity"
     guid: 62e4268a779fc174f9e29f7fb72ede89
+  - enabled: 1
+    path: Assets/Main.unity
+    guid: 7593b1b964d644f4d9a0f98eea69ee3c
+  - enabled: 1
+    path: Assets/Win1.unity
+    guid: 18e513f19af238d488788a2f13d2a1cb
   m_configObjects: {}
