@@ -21,5 +21,4 @@ public class Bullet : MonoBehaviour
         if (Time.time >= 結束時間)
             Destroy(gameObject);
     }
-    
 }
