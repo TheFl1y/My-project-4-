@@ -7,8 +7,6 @@ public class Bullet : MonoBehaviour
     public float 存活時間 = 1.5f;
     float 結束時間;
 
-    public GameObject player;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +18,11 @@ public class Bullet : MonoBehaviour
     {
         if (Time.time >= 結束時間)
             Destroy(gameObject);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(!collision.gameObject.CompareTag("主角")){
+            Destroy(gameObject);
+        }
     }
 }

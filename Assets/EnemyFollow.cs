@@ -32,27 +32,21 @@ public class EnemyFollow : MonoBehaviour
 
             if (AttackTrue == true){
                 動畫控制器.SetFloat("Speed",1f);
-                動畫控制器.SetBool("Attack",false);
             }
             
             // Check if the player is within the attack distance
             if (distanceToPlayer <= attackDistance)
             {
-                if(AttackTrue == true){
-                    動畫控制器.SetBool("Attack",true);
-                    動畫控制器.SetFloat("Speed",-1f);
-                }
-                        
                 // Check the attack cooldown before attacking again
                 if (attackTimer <= 0.0f)
                 {
                     // Attack the player
-                    
+                    if(AttackTrue == true)
+                        動畫控制器.SetBool("Attack",true);
                     AttackPlayer();
                     attackTimer = attackCooldown; // Reset the cooldown
                 }
             }
-            
         }
 
         // Update the attack timer
@@ -72,9 +66,7 @@ public class EnemyFollow : MonoBehaviour
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(attackDamage);
-            
         }
-        
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)

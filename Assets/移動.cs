@@ -25,7 +25,6 @@ public class 移動 : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
 
-
         // Create an empty GameObject as the camera pivot
         cameraPivot = new GameObject("CameraPivot").transform;
         cameraPivot.SetParent(transform);
@@ -33,6 +32,7 @@ public class 移動 : MonoBehaviour
 
         Camera.main.transform.SetParent(cameraPivot); // Attach the camera to the pivot
 
+        // 锁定物体的旋转，防止翻转
         rb.freezeRotation = true;
     }
 
@@ -65,8 +65,6 @@ public class 移動 : MonoBehaviour
             動畫控制器.SetBool("Attack", true);
         else
             動畫控制器.SetBool("Attack", false);
-
-        
     }
 
     float ClampVerticalRotation(float angle)
@@ -85,20 +83,10 @@ public class 移動 : MonoBehaviour
 
     public void 特效開始()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit)) {
-            // 获取鼠标点击位置
-            Vector3 targetPosition = hit.point;
-
-            // 计算方向向量
-            Vector3 direction = (targetPosition - 特效位置.transform.position).normalized;
-
-            // 创建并初始化氣功彈
-            GameObject 已發射氣功彈 = Instantiate(攻擊氣功彈, 特效位置.transform.position, Quaternion.identity);
-            已發射氣功彈.GetComponent<Rigidbody>().AddForce(direction * 1000);
-        }
+        播放中特效 = Instantiate(攻擊特效, 特效位置.transform);
+        AudioSource.PlayClipAtPoint(攻擊音效, 特效位置.transform.position, 1);
+        GameObject 已發射氣功彈 = Instantiate(攻擊氣功彈, 特效位置.transform.position, Quaternion.Euler(0, 0, 0));
+        已發射氣功彈.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
     }
 
     public void 特效結束()

@@ -15,7 +15,6 @@ public class 傷害輸出 : MonoBehaviour
 
     private void OnCollisionEnter(Collision 撞擊資訊)
     {
-        
         HandleCollision(撞擊資訊.gameObject, 撞擊資訊.contacts[0].point);
     }
 
@@ -31,9 +30,6 @@ public class 傷害輸出 : MonoBehaviour
 
         // Check if the collided object has the EnemyHP script
         EnemyHP enemyHP = 撞擊物件.GetComponent<EnemyHP>();
-        if(撞擊物件.CompareTag("牆壁") ||撞擊物件.CompareTag("敵人") ){
-            Destroy(gameObject);
-        }
         if (enemyHP != null && 攻擊中)
         {
             // Apply damage to the enemy
@@ -53,7 +49,7 @@ public class 傷害輸出 : MonoBehaviour
     IEnumerator 特效處理(ParticleSystem 特效)
     {
         yield return new WaitForSeconds(.1f);
-        Destroy(特效);
+        Destroy(特效.gameObject);
     }
 
     public void 攻擊開始()
